@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title> Cadastrar marca</title>
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Cadastrar Marca</h1>
+            <form th:object="${marca}" th:action="@{/marca/salvar}"  method="post">
+                
+                <input th:field="*{id}" type="hidden" id="id">               
+                
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="nome">Nome</label>
+                        <input th:field="*{nome}" type="text" class="form-control" id="nome" placeholder="Nome" />
+                    </div>
+                </div>               
+                <a class="btn" href="/marca/listar">Voltar</a>
+                <button class="btn btn-success" type="submit">Salvar</button>
+            </form>
+        </div>
+
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

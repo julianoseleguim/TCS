@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <title> Listagem de marcas</title>
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Listagem de Marcas</h1>
+
+            <a class="btn btn-primary" style="margin-bottom: 10px" href="/marca/novo">Cadastrar</a>
+
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Acoes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="marca : ${marcas}">
+                    <tr>
+                        <td th:text="${marca.nome}"></td>
+                        <td>
+                            <a  th:href="@{'/marca/' + ${marca.id} + '/editar'}" href="#">Editar</a>
+                            <a  th:href="@{'/marca/' + ${marca.id} + '/excluir'}" 
+                            	th:onclick="'return confirm(\'Deseja excluir esse contato?\')'" href="#">Excluir</a>	
+                        </td>
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+        </div>
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>
