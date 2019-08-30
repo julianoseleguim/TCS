@@ -1,0 +1,12 @@
+create table product(
+	id int not null primary key auto_increment,
+	brand varchar(25) not null,
+	made_in varchar(25) not null,
+    price float not null,
+    nome varchar(25) not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
+
+create table marca(
+	id int not null primary key auto_increment,
+    nome varchar(25) not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
